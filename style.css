@@ -1,0 +1,309 @@
+/* mobile size= 375px */
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
+
+:root {
+    /* coler */
+    --White: hsl(0, 0%, 100%);
+    --Light_pink: hsl(275, 100%, 97%);
+    --Grayish_purple: hsl(292, 16%, 49%);
+    --Dark_purple: hsl(292, 42%, 14%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    min-height: 619px;
+}
+
+.containers {
+    background-color: red;
+    display: grid;
+    /* grid-template-rows: 12.5rem 66svb 1rem; */
+    grid-template-rows: 30lvh 68lvh 2lvh;
+    grid-template-columns: 1fr;
+    width: 100%;
+
+}
+
+.up {
+    background: url('./assets/images/background-pattern-mobile.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.main {
+    background-color: #ffeaff;
+    position: relative;
+
+    & .card {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 90%;
+        background-color: white;
+        position: absolute;
+        left: 50%;
+        top: -7.8rem;
+        transform: translateX(-50%);
+        border-radius: 1rem;
+        box-shadow: 1px 16px 20px 8px rgba(47, 21, 51, 0.10);
+
+        & .header {
+            margin-top: 30px;
+            padding-top: 15px;
+            padding-inline: 10px;
+            font-size: 2.1rem;
+            font-family: var(--work_sans);
+            font-weight: 600;
+            color: var(--Dark_purple);
+
+            & span {
+                padding-left: 10px;
+                padding-right: 16px;
+
+                & img {
+                    width: 1.8rem;
+                    height: 1.8rem;
+                }
+            }
+        }
+
+        & .sub_header {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--Dark_purple);
+            font-family: 'Work Sans', sans-serif;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding: 2rem 0rem 1rem;
+            background-color: white;
+            width: 90%;
+            cursor: pointer;
+            border: none;
+            border-top: 1px solid var(--Light_pink);
+            border-top-width: thin;
+            text-align: left;
+            transition: 1s;
+            position: relative;
+
+            &:focus,
+            &:active,
+            &:hover {
+
+                color: #b02cec;
+                transition: 0.5s;
+            }
+
+            &:after {
+                content: url('./assets/images/icon-plus.svg');
+
+                float: right;
+
+                position: absolute;
+                right: 1px;
+            }
+
+            &.active:after {
+                content: url('./assets/images/icon-minus.svg');
+            }
+
+            &:nth-child(2) {
+                border-top: none;
+
+            }
+        }
+
+        & .sub_p {
+            font-size: 0.8rem;
+            font-weight: 400;
+
+            font-family: 'Work Sans', sans-serif;
+            margin-bottom: 15px;
+            width: 90%;
+            max-height: 0;
+            overflow: hidden;
+
+            transition: max-height 0.3s ease-out;
+
+            & p {
+                padding-block: 5px;
+                color: var(--Grayish_purple);
+                margin-left: 20px;
+                width: 90%;
+            }
+        }
+    }
+}
+
+.down {
+    background-color: #ffaae1;
+    overflow: hidden;
+    text-align: center;
+    font-size: 0.5rem;
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* สูงไม่เกิน */
+@media (max-height:643px){
+    .main {
+        background-color: #ffeaff;
+        position: relative;
+    
+        & .card {
+
+            & .header {
+                margin-top: 10px;
+            }
+
+            &.sub_header {
+                margin-right: 0px;
+                padding: 2rem 0rem 1rem;
+            }
+        }
+    
+}
+}
+@media(min-width:424px){
+    .main {
+
+        & .card {
+            width: 90%;
+            top: -8.2rem;
+
+            & .header {
+                font-size: 2.1rem;
+
+                & span {
+                    & img {
+                        width: 2.2rem;
+                        height: 1.6rem;
+                    }
+                }
+            }
+
+            & .sub_header {
+                font-size:0.85rem ;
+            }
+        }
+    }
+    .down{
+        & .attribution{
+            font-size: 0.8rem;
+        }
+    }
+}
+
+/* ความกว้างน้อยขั้นต่ำที่ 767px */
+@media (min-width: 767px) {
+
+    .main {
+
+        & .card {
+            width: 70%;
+            top: -8.2rem;
+
+            & .header {
+                font-size: 2.5rem;
+
+                & span {
+                    & img {
+                        width: 2.2rem;
+                        height: 1.8rem;
+                    }
+                }
+            }
+
+            & .sub_header {
+                font-size:0.85rem ;
+            }
+
+            & .sub_header>br {
+                display: none;
+            }
+        }
+    }
+    .down{
+        & .attribution{
+            font-size: 0.8rem;
+        }
+    }
+}
+
+@media (min-width: 1023px) {
+
+    .main {
+
+        & .card {
+            width: 55%;
+            top: -8.5rem;
+
+            & .header {
+                font-size: 2.7rem;
+
+                & span {
+
+                    & img {
+                        width: 2.3rem;
+                        height: 2.1rem;
+                    }
+                }
+            }
+
+            & .sub_header{
+                font-size: 0.95rem;
+            }
+        }
+    }
+    .down{
+        & .attribution{
+            font-size: 0.8rem;
+        }
+    }
+}
+
+@media(min-width: 1439px) {
+    .main {
+
+        & .card {
+            width: 42%;
+            top: -8.7rem;
+
+            & .header {
+                font-size: 3rem;
+
+                & span {
+
+                    & img {
+                        width: 2.5rem;
+                        height: 2.2rem;
+                    }
+                }
+            }
+
+            & .sub_header {
+                font-size: 1.1rem;
+            }
+
+            & .sub_p {
+                font-size: 1.0rem;
+            }
+        }
+    }
+    .down{
+        & .attribution{
+            font-size: 0.9rem;
+        }
+    }
+
+}
